@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo conectar accesorios a tu DreamByte TV</title>
+<style>
+  :root{
+    --bg:#050b24; --bg2:#0a1a4a; --panel:rgba(30,70,160,.22); --line:rgba(90,160,255,.35);
+    --blue:#2f7bff; --holo:#7fd0ff; --text:#eaf3ff; --muted:#a9c2ea; --warn:#ffd27a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);
+    background:radial-gradient(1200px 600px at 70% -10%,#12307a 0%,transparent 60%),linear-gradient(180deg,var(--bg2),var(--bg));
+    min-height:100vh;line-height:1.55}
+  main{max-width:960px;margin:0 auto;padding:24px 16px 64px}
+  header{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+  header img{width:84px;height:auto}
+  h1{font-size:clamp(1.6rem,4.5vw,2.4rem);margin:0;line-height:1.15}
+  .sub{color:var(--muted);margin:4px 0 24px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin:18px 0;
+    backdrop-filter:blur(6px);box-shadow:0 0 24px rgba(47,123,255,.12) inset}
+  h2{margin:0 0 10px;font-size:1.3rem;color:var(--holo)}
+  .note{border-color:rgba(255,210,122,.55);background:rgba(255,210,122,.08)}
+  .note h2{color:var(--warn)}
+  figure{margin:14px 0 0}
+  figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+  figcaption{color:var(--muted);font-size:.9rem;margin-top:6px}
+  ol li{margin:8px 0}
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+  th{color:var(--holo)}
+  .tag{display:inline-block;padding:2px 10px;border-radius:999px;background:var(--blue);font-size:.8rem;font-weight:600}
+  footer{color:var(--muted);font-size:.85rem;margin-top:32px;text-align:center}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="../assets/brand/dreambyte-cloud-icon.png" alt="DreamByte">
+    <div>
+      <h1>Cómo conectar accesorios a tu DreamByte TV</h1>
+      <div class="sub">Guía de ayuda · DreamByte OS TV 0.1 Experimental</div>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>Lo esencial</h2>
+    <p>Los accesorios para DreamByte TV se conectan mediante <strong>DreamByte Link</strong>.
+    <strong>El accesorio debe incluir específicamente el conector DreamByte Link</strong> (el cable o el puerto con forma de «V» que ves abajo) para conectarse directamente a tu DreamByte TV.</p>
+    <p>Un solo conector reúne cuatro funciones: <strong>datos</strong>, <strong>energía</strong>, <strong>pantalla</strong> y <strong>periféricos</strong>.</p>
+  </section>
+
+  <section class="card note">
+    <h2>Estado del proyecto</h2>
+    <p><span class="tag">CONCEPTO 0.1</span> DreamByte Link se encuentra en exploración de diseño. Los planos de esta guía son un <em>concepto</em>: todavía no hay hardware fabricado, especificación eléctrica final ni controlador en el sistema. Mientras tanto, DreamByte OS TV reconoce accesorios estándar (USB, Bluetooth, HDMI) según el hardware y los controladores de tu equipo.</p>
+  </section>
+
+  <section class="card">
+    <h2>1. Identifica el conector del accesorio</h2>
+    <p>Busca en el accesorio un conector (macho) con la forma de «V» en la punta y contactos dorados en su interior.</p>
+    <figure>
+      <img src="../assets/link/01-conector-macho.jpg" alt="Conector DreamByte Link macho, vista tres cuartos">
+      <figcaption>Conector DreamByte Link (macho) · vista 3/4</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/link/03-detalle-contactos.jpg" alt="Detalle de la punta del conector con contactos">
+      <figcaption>Detalle de la punta: dos bloques de contactos a ambos lados de la «V»</figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>2. Localiza el puerto en tu DreamByte TV</h2>
+    <p>El puerto (hembra) está integrado en el borde del dispositivo, con una pequeña luz azul que lo rodea.</p>
+    <figure>
+      <img src="../assets/link/02-puerto-hembra.jpg" alt="Puerto DreamByte Link integrado en el borde del dispositivo">
+      <figcaption>Puerto DreamByte Link integrado en el borde del equipo</figcaption>
+    </figure>
+  </section>
+
+  <section class="card">
+    <h2>3. Conecta el accesorio</h2>
+    <ol>
+      <li>Alinea la «V» del conector con la «V» del puerto.</li>
+      <li>Inserta con suavidad hasta que asiente. No fuerces el conector.</li>
+      <li>Espera unos segundos: el puerto está pensado para iluminarse en azul cuando hay conexión.</li>
+      <li>El accesorio debería aparecer en <strong>Ajustes</strong> (la sección exacta se definirá en el prototipo).</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>4. Qué transporta cada grupo de contactos</h2>
+    <figure>
+      <img src="../assets/link/04-seccion-tecnica.jpg" alt="Sección técnica con los contactos Data, Power, Display y Peripherals">
+      <figcaption>Sección técnica: distribución de contactos</figcaption>
+    </figure>
+    <table>
+      <tr><th>Grupo</th><th>Para qué sirve</th></tr>
+      <tr><td>Data (datos)</td><td>Intercambio de información con el accesorio</td></tr>
+      <tr><td>Power (energía)</td><td>Alimentación del accesorio</td></tr>
+      <tr><td>Display (pantalla)</td><td>Señal de imagen cuando el accesorio la usa</td></tr>
+      <tr><td>Peripherals (periféricos)</td><td>Control de periféricos conectados</td></tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>¿No reconoce el accesorio?</h2>
+    <ul>
+      <li>Comprueba que el accesorio tenga el conector <strong>DreamByte Link</strong>; otros conectores no encajan.</li>
+      <li>Desconecta, espera 5 segundos y vuelve a conectar.</li>
+      <li>Reinicia tu DreamByte TV y revisa <strong>Ajustes → Información del sistema</strong>.</li>
+    </ul>
+  </section>
+
+  <footer>© DreamByte Studios · Planos: «DreamByte Link 0.1 — Universal Connectivity Concept»</footer>
+</main>
+</body>
+</html>
