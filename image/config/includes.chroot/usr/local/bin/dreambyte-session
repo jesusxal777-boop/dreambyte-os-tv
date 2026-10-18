@@ -1,0 +1,6 @@
+#!/bin/sh
+# Sesión de DreamByte OS TV 0.1: Cage (Wayland, una sola app a pantalla completa) + Firefox.
+export MOZ_ENABLE_WAYLAND=1
+export WLR_NO_HARDWARE_CURSORS=1
+export XDG_CURRENT_DESKTOP=DreamByte
+exec cage -s -- firefox-esr

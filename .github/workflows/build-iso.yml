@@ -1,0 +1,59 @@
+name: build-iso
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "image/**"
+      - "build/**"
+      - ".github/workflows/build-iso.yml"
+  workflow_dispatch:
+    inputs:
+      amd64:
+        description: "Construir también la ISO amd64 (experimental)"
+        type: boolean
+        default: false
+
+jobs:
+  arm64:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Construir ISO arm64 (contenedor Debian trixie)
+        run: |
+          docker run --rm --privileged -v "$PWD":/work -w /work debian:trixie \
+            bash build/build.sh arm64
+      - name: Mostrar hash
+        run: cat out/*.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dreambyte-os-tv-0.1-arm64
+          path: |
+            out/*.iso
+            out/*.sha256
+            out/*.log
+          if-no-files-found: error
+          retention-days: 14
+
+  amd64:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.amd64 }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Construir ISO amd64 (contenedor Debian trixie)
+        run: |
+          docker run --rm --privileged -v "$PWD":/work -w /work debian:trixie \
+            bash build/build.sh amd64
+      - name: Mostrar hash
+        run: cat out/*.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dreambyte-os-tv-0.1-amd64
+          path: |
+            out/*.iso
+            out/*.sha256
+            out/*.log
+          if-no-files-found: error
+          retention-days: 14

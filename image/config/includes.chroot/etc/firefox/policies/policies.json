@@ -1,0 +1,14 @@
+{
+  "policies": {
+    "Homepage": {
+      "URL": "file:///usr/share/dreambyte/home.html",
+      "Locked": false,
+      "StartPage": "homepage"
+    },
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
+    "DontCheckDefaultBrowser": true,
+    "DisableTelemetry": true,
+    "NoDefaultBookmarks": true
+  }
+}
